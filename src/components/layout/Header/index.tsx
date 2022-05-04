@@ -35,9 +35,6 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
       <div
         style={{
           width: '100%',
-          height: device === DeviceType.Phone ? '50px' : '90px',
-          background: '#6ef600',
-          backdropFilter: 'blur(3px)',
           zIndex: 98,
         }}
       />

@@ -67,7 +67,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       width: '70%',
       display: 'flex',
       flexDirection: 'column',
-      paddingRight: '20px',
+      paddingRight: '40px',
       minHeight: '450px',
       justifyContent: 'center',
       alignItems: 'center',

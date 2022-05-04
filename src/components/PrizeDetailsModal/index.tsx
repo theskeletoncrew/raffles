@@ -80,7 +80,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   style={{
                     color: '#FFFFFF',
                     fontFamily: 'neue-haas-unica, sans-serif',
-                    fontSize: '13px',
+                    fontSize: '15px',
                   }}
                 >
                   {prize.mint.name}
@@ -106,7 +106,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                       style={{
                         color: '#FFFFFF',
                         fontFamily: 'neue-haas-unica, sans-serif',
-                        fontSize: '13px',
+                        fontSize: '15px',
                       }}
                     >
                       {raffle.metadata.artist}
@@ -132,7 +132,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                       style={{
                         color: '#FFFFFF',
                         fontFamily: 'neue-haas-unica, sans-serif',
-                        fontSize: '13px',
+                        fontSize: '15px',
                       }}
                     >
                       {`${raffle.metadata.description}`}
@@ -162,7 +162,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                       style={{
                         color: '#FFFFFF',
                         fontFamily: 'neue-haas-unica, sans-serif',
-                        fontSize: '13px',
+                        fontSize: '15px',
                       }}
                     >
                       {prizeRank + 1}
@@ -189,7 +189,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   style={{
                     color: '#FFFFFF',
                     fontFamily: 'neue-haas-unica, sans-serif',
-                    fontSize: '13px',
+                    fontSize: '15px',
                   }}
                 >
                   {prize.mint.publicKey.toString()}

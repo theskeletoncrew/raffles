@@ -19,11 +19,11 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       padding: theme.spacing(0, 1),
     }),
     appBar: ({ device }) => ({
-      height: device === DeviceType.Phone ? '50px' : '90px',
+      height: device === DeviceType.Phone ? '50px' : '75px',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      backgroundColor: 'white',
+      backgroundColor: '#ececec',
       alignItems: 'center',
       zIndex: 99,
     }),
