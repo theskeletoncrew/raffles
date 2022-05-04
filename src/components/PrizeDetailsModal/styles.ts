@@ -49,6 +49,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       alignItems: device === DeviceType.Phone ? 'center' : 'baseline',
       textAlign: device === DeviceType.Phone ? 'center' : 'left',
       justifyContent: 'space-evenly',
+      marginTop: '-10px',
       padding:
         device === DeviceType.Phone
           ? theme.spacing(1)

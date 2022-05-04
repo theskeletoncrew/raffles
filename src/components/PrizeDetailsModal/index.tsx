@@ -79,8 +79,8 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   variant="body1"
                   style={{
                     color: '#FFFFFF',
-                    fontFamily: 'Druk Wide Web',
-                    fontWeight: 900,
+                    fontFamily: 'neue-haas-unica, sans-serif',
+                    fontSize: '13px',
                   }}
                 >
                   {prize.mint.name}
