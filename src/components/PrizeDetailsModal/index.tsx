@@ -153,6 +153,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   color: '#6ef600',
                   fontFamily: 'Druk Wide Web',
                   fontWeight: 900,
+                  marginLeft: '-6px',
                 }}
               >
                 View on Solscan{' '}

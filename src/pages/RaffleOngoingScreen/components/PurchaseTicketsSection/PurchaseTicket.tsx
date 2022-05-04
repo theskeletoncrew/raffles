@@ -428,7 +428,10 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
                 alignItems: 'center',
               }}
             >
-              <Typography variant="h4" style={{ color: 'white' }}>
+              <Typography
+                variant="h4"
+                style={{ color: 'white', fontSize: '18px' }}
+              >
                 {getDisplayAmount(
                   getBasketPrice(ticketAmount),
                   paymentOption.mint
@@ -445,7 +448,10 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
             </Typography>
             {paymentOptions.size === 1 ? (
               <div className={classes.paymentOptionSelection}>
-                <Typography variant="h4" style={{ color: 'white' }}>
+                <Typography
+                  variant="h4"
+                  style={{ color: 'white', fontSize: '18px' }}
+                >
                   {raffle.proceeds.mint.symbol}
                 </Typography>
                 <div className={classes.paymentOptionLogoContainer}>
