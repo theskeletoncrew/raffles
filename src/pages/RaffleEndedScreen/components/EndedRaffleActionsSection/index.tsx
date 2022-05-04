@@ -44,10 +44,25 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
   if (!userIsConnected)
     return (
       <>
-        <Typography variant="h3" className={classes.textHighlight} style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
+        <Typography
+          variant="h3"
+          className={classes.textHighlight}
+          style={{
+            color: '#6ef600',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
           Winners have been announced.
         </Typography>
-        <Typography variant="body1" style={{ color: 'white', fontFamily: 'Sora' }}>
+        <Typography
+          variant="body1"
+          style={{
+            color: 'white',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
           Connect your wallet to check if you have won any prizes!
         </Typography>
         <WalletMultiButton
@@ -61,16 +76,40 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
   if (!winnersRevealed)
     return (
       <>
-        <Typography variant="h3" className={classes.textHighlight} style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
-          Winners will be announced soon.
+        <Typography
+          variant="h3"
+          className={classes.textHighlight}
+          style={{
+            color: '#6ef600',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
+          Winners to be announced soon.
         </Typography>
-        <Typography variant="body1" style={{ fontWeight: 'bold', color: 'white', fontFamily: 'Sora' }}>Hang tight!</Typography>
+        <Typography
+          variant="body1"
+          style={{
+            color: 'white',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
+          Stay tuned!
+        </Typography>
       </>
     );
 
   if (!userHasParticipated)
     return (
-      <Typography variant="h3" style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
+      <Typography
+        variant="h3"
+        style={{
+          color: '#6ef600',
+          fontFamily: 'Druk Wide Web',
+          fontWeight: 900,
+        }}
+      >
         Uh oh! It looks like you did not participate in this raffle!
       </Typography>
     );
@@ -78,24 +117,52 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
   if (entrantWinningTickets.length === 0)
     return (
       <div>
-        <Typography variant="h3" className={classes.textHighlight} style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
-          Oh no! No prize.
+        <Typography
+          variant="h3"
+          className={classes.textHighlight}
+          style={{
+            color: '#6ef600',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
+          Sorry, you were not a winner :(
         </Typography>
-        <Typography variant="body1" style={{ color: 'white' }}>Better luck next time!</Typography>
+        <Typography variant="body1" style={{ color: 'white' }}>
+          Better luck next time!
+        </Typography>
       </div>
     );
 
   return (
     <div>
-      <Typography variant="h3" className={classes.textHighlight} style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
-        Hurray, you won!
+      <Typography
+        variant="h3"
+        className={classes.textHighlight}
+        style={{
+          color: '#6ef600',
+          fontFamily: 'Druk Wide Web',
+          fontWeight: 900,
+        }}
+      >
+        Hooray, you won!
       </Typography>
       <div>
-        <Typography style={{ color: 'white', fontFamily: 'Sora' }}>
+        <Typography
+          style={{
+            color: 'white',
+            fontFamily: 'Druk Wide Web',
+            fontWeight: 900,
+          }}
+        >
           <Button
             className={classes.scrollLink}
             variant="text"
-            style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}
+            style={{
+              color: '#000000',
+              fontFamily: 'Druk Wide Web',
+              fontWeight: 900,
+            }}
             onClick={() =>
               scrollRef.current?.scrollIntoView({
                 behavior: 'smooth',
@@ -103,9 +170,9 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
               })
             }
           >
-            Scroll
+            Scroll down
           </Button>
-          to see your prize(s)!
+          to claim your prize(s)!
         </Typography>
       </div>
     </div>

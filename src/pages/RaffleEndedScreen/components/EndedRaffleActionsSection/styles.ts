@@ -25,8 +25,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '20px',
     width: '80%',
     height: '40px',
+    fontSize: '12px',
     background: '#6435C9',
-    fontFamily: 'Sora',
+    fontFamily: 'Druk Wide Web',
+    fontWeight: 900,
     '&:hover': {
       backgroundColor: '#6435C9',
     },

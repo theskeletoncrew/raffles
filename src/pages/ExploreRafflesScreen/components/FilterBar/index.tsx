@@ -6,7 +6,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { useStyles } from './styles';
 import { useViewport } from '../../../../hooks/useViewport';
 import { DeviceType } from '../../../../providers/ViewportProvider';
-import Spacer from '../../../../components/Spacer'
+import Spacer from '../../../../components/Spacer';
 
 interface FilterBarProps {
   hideEndedRaffles: boolean;
@@ -53,17 +53,16 @@ const FilterBar: FC<FilterBarProps> = ({
                 fontSize={14}
                 initialSelectedIndex={0}
                 selectionIndicatorMargin={0}
-                selectedBackgroundColor={'#6435C9'}
+                selectedBackgroundColor={'#000000'}
                 backgroundColor={'transparent'}
-                fontColor={'#6435C9'}
+                fontColor={'#000000'}
               />
             </div>
           )}
         </div>
         <Spacer height={'50px'} />
         <div className={classes.rightPhoneSection}>
-          <div className={classes.showEndedRaffles}>
-          </div>
+          <div className={classes.showEndedRaffles}></div>
         </div>
       </div>
     );
@@ -82,17 +81,16 @@ const FilterBar: FC<FilterBarProps> = ({
               fontSize={14}
               initialSelectedIndex={0}
               selectionIndicatorMargin={0}
-              selectedBackgroundColor={'#6435C9'}
+              selectedBackgroundColor={'#000000'}
               backgroundColor={'transparent'}
-              fontColor={'#6435C9'}
+              fontColor={'#000000'}
             />
           </div>
         )}
       </div>
       <div className={classes.rightSection}>
-      
         <div className={classes.showEndedRaffles}>
-        <Spacer height={'100px'} />
+          <Spacer height={'100px'} />
         </div>
       </div>
     </div>

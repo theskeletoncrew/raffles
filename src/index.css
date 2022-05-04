@@ -1,12 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Druk Wide Web';
+  src: url('./fonts/DrukWide-Super-Web.woff2') format('woff2'),
+    url('./fonts/DrukWide-Super-Web.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
 
 body {
   margin: 0;
-  /* font-family: 'Sora', sans-serif; */
+  font-family: neue-haas-unica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Druk Wide Web', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1em;
+  margin-bottom: 1em;
 }

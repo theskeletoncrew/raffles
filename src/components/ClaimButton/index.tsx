@@ -29,8 +29,14 @@ const ClaimButton: FC<ClaimButtonProps> = ({
 
   return (
     <div className={classes.root}>
-      <ReactiveButton className={classes.rbutton}
-        style={{ fontFamily: "Sora", borderRadius: '5px', width: '100%' }}
+      <ReactiveButton
+        className={classes.rbutton}
+        style={{
+          fontFamily: 'Druk Wide Web',
+          fontWeight: 900,
+          borderRadius: '5px',
+          width: '100%',
+        }}
         color={'violet'}
         width={'100%'}
         idleText={'Claim Your Prize'}

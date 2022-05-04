@@ -50,7 +50,11 @@ const PrizeGalleryEnded: FC<PrizeGalleryEndedProps> = ({
           return (
             <Grid key={prizeIndex} item className={classes.prizeItem}>
               <PrizeCardEnded
-                style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}
+                style={{
+                  color: '#6ef600',
+                  fontFamily: 'Druk Wide Web',
+                  fontWeight: 900,
+                }}
                 key={prizeIndex}
                 prize={prize}
                 raffle={raffle}

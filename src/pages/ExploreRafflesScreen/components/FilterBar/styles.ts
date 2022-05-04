@@ -41,7 +41,9 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       justifyContent: 'center',
       width: 200,
       height: 30,
-      fontFamily: 'Sora',
+
+      fontFamily: 'Druk Wide Web',
+      fontWeight: 900,
     },
     showEndedRaffles: {
       display: 'flex',

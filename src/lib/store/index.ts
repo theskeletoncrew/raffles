@@ -26,6 +26,7 @@ export const fetchProceedsAccount = async (
   const account = await connection.getAccountInfo(address);
   if (!account) throw Error('Failed to fetch proceeds account');
   const data = parseTokenAccount(account.data);
+  console.log(data.mint.toString());
   const tokenInfo = tokenInfoMap.get(data.mint.toString());
   if (!tokenInfo)
     throw Error(
@@ -61,7 +62,7 @@ const getPrizeAddressForPrizeIndex = async (
 export const fetchPrizes = async (
   raffleAccountAddress: PublicKey,
   draffleClient: DraffleProgram,
-  totalPrizes: number,
+  totalPrizes: number
 ): Promise<Prize[]> => {
   let prizes: Prize[] = [];
 
@@ -78,7 +79,7 @@ export const fetchPrizes = async (
     await draffleClient.provider.connection.getMultipleAccountsInfo(
       prizeAddresses
     );
-  
+
   const prizeTokenAccounts = prizeAccounts.map((prizeAccount) => {
     if (!prizeAccount) {
       throw new Error('Invalid prize account');
@@ -87,19 +88,22 @@ export const fetchPrizes = async (
   });
 
   const metadataAddresses = await Promise.all(
-    prizeTokenAccounts.map((prizeTokenAccount) => getMetadata(prizeTokenAccount.mint))
+    prizeTokenAccounts.map((prizeTokenAccount) =>
+      getMetadata(prizeTokenAccount.mint)
+    )
   );
 
-  const metadataAccountsInfos = await draffleClient.provider.connection.getMultipleAccountsInfo(
-    metadataAddresses
-  );
+  const metadataAccountsInfos =
+    await draffleClient.provider.connection.getMultipleAccountsInfo(
+      metadataAddresses
+    );
 
   for (const [index, prizeTokenAccount] of prizeTokenAccounts.entries()) {
     prizes.push(
       await processPrize(
         prizeAddresses[index],
         prizeTokenAccount,
-        metadataAccountsInfos[index],
+        metadataAccountsInfos[index]
       )
     );
   }
@@ -114,8 +118,10 @@ const processPrize = async (
   let mintInfo;
   const tokenInfo = tokenInfoMap.get(prizeTokenAccount.mint.toString());
   if (tokenInfo) {
-    const name = `${getDisplayAmount(prizeTokenAccount.amount, tokenInfo)} ${tokenInfo.symbol}`;
-    const imageURI = (tokenInfo as any)?.extensions?.imageURI
+    const name = `${getDisplayAmount(prizeTokenAccount.amount, tokenInfo)} ${
+      tokenInfo.symbol
+    }`;
+    const imageURI = (tokenInfo as any)?.extensions?.imageURI;
     mintInfo = {
       name,
       publicKey: prizeTokenAccount.mint,
@@ -176,12 +182,13 @@ export const toEntrantsProcessed = (entrantsDataRaw: EntrantsDataRaw) => {
     }, new Map<string, Entrant>());
 
   return entrantsProcessed;
-}
+};
 
 export const getRaffleProgramAccounts = async (
   draffleClient: DraffleProgram
-  ): Promise<[a: ProgramAccount<RaffleDataRaw>[], b: ProgramAccount<EntrantsDataRaw>[]]> => {
-
+): Promise<
+  [a: ProgramAccount<RaffleDataRaw>[], b: ProgramAccount<EntrantsDataRaw>[]]
+> => {
   const result = await draffleClient.provider.connection.getProgramAccounts(
     draffleClient.programId
   );
@@ -200,7 +207,7 @@ export const getRaffleProgramAccounts = async (
         account: draffleClient.coder.accounts.decode<RaffleDataRaw>(
           'Raffle',
           account.data
-        )
+        ),
       });
     } else if (entrantsDiscriminator.compare(discriminator) === 0) {
       entrantsDataRawProgramAccounts.push({
@@ -208,11 +215,11 @@ export const getRaffleProgramAccounts = async (
         account: draffleClient.coder.accounts.decode<EntrantsDataRaw>(
           'Entrants',
           account.data
-        )
+        ),
       });
     } else {
       console.log(`Could not decode ${pubkey.toBase58()}`);
     }
   });
   return [raffleDataRawProgramAccounts, entrantsDataRawProgramAccounts];
-}
+};

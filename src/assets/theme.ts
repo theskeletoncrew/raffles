@@ -1,31 +1,36 @@
 import { createTheme } from '@material-ui/core/styles';
 import { DeviceType } from '../providers/ViewportProvider';
 
-const PRIMARY_COLOR = '#6435C9';
-const SECONDARY_COLOR = '#F3B8C7';
+const PRIMARY_COLOR = '#000000';
+const SECONDARY_COLOR = '#6ef600';
 
 const theme = ({ device }: { device: DeviceType }) =>
   createTheme({
     typography: {
-      allVariants: { color: '#FFF', fontFamily: 'Sora' },
+      allVariants: { color: '#FFF', fontFamily: 'neue-haas-unica, sans-serif' },
       h1: {
         color: PRIMARY_COLOR,
+        fontFamily: 'Druk Wide Web',
+        fontWeight: 900,
         textAlign: 'center',
         fontSize: device === DeviceType.Phone ? '20px' : '40px',
       },
       h2: {
         color: SECONDARY_COLOR,
-        fontWeight: 'bold',
+        fontFamily: 'Druk Wide Web',
+        fontWeight: 900,
         fontSize: device === DeviceType.Phone ? '18px' : '25px',
       },
       h3: {
         color: SECONDARY_COLOR,
-        fontWeight: 'bold',
+        fontFamily: 'Druk Wide Web',
+        fontWeight: 900,
         fontSize: device === DeviceType.Phone ? '15px' : '16px',
       },
       h4: {
         color: 'black',
-        fontFamily: 'Sora',
+        fontFamily: 'Druk Wide Web',
+        fontWeight: 900,
         fontSize: device === DeviceType.Phone ? '20px' : '20px',
       },
       body1: {

@@ -300,16 +300,36 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
 
   return (
     <div className={`${classes.actionSection} ${classes.root}`}>
-      <Typography variant="h3" className={classes.titleSection} style={{ justifyContent: 'center', textTransform: 'uppercase', fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
-        Purchase a Ticket
+      <Typography
+        variant="h3"
+        className={classes.titleSection}
+        style={{
+          justifyContent: 'center',
+          textTransform: 'uppercase',
+          color: '#6ef600',
+          fontFamily: 'Druk Wide Web',
+          fontWeight: 900,
+        }}
+      >
+        Purchase Ticket{ticketAmount > 1 && 's'}
       </Typography>
 
       <div className={classes.countdown}>
-        <Countdown endTimestamp={raffle.endTimestamp} style={{ color: 'white', fontFamily: 'Sora' }} spacing={'5%'} />
+        <Countdown
+          endTimestamp={raffle.endTimestamp}
+          style={{
+            color: 'white',
+          }}
+        />
       </div>
-          
+
       <div className={classes.amountLabel}>
-        <Typography variant="overline" style={{ fontWeight: 'bold', color: '#F3B8C7' }}>Amount</Typography>
+        <Typography
+          variant="overline"
+          style={{ fontWeight: 'bold', color: '#6ef600' }}
+        >
+          Amount
+        </Typography>
       </div>
       <div className={classes.ticketAmountSection}>
         <div className={classes.ticketAmountSectionLeft}>
@@ -359,9 +379,7 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
                     );
                     setTicketAmount(maxTickets);
                   }}
-                >
-                  
-                </Button>
+                ></Button>
               ),
               startAdornment: (
                 <Button
@@ -370,9 +388,7 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
                   disableRipple
                   className={classes.maxButton}
                   onClick={() => setTicketAmount(1)}
-                >
-                  
-                </Button>
+                ></Button>
               ),
             }}
           />
@@ -398,7 +414,12 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
       <div className={classes.priceSection}>
         <div className={classes.paymentOptionSection}>
           <div className={classes.basketPrice}>
-            <Typography variant="overline" style={{ fontWeight: 'bold', color: '#F3B8C7' }}>Total Price</Typography>
+            <Typography
+              variant="overline"
+              style={{ fontWeight: 'bold', color: '#6ef600' }}
+            >
+              Total Price
+            </Typography>
             <div
               style={{
                 height: '100%',
@@ -416,9 +437,17 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
             </div>
           </div>
           <div className={classes.basketPrice}>
-            <Typography variant="overline" style={{ fontWeight: 'bold', color: '#F3B8C7' }}>Currency</Typography>
+            <Typography
+              variant="overline"
+              style={{ fontWeight: 'bold', color: '#6ef600' }}
+            >
+              Currency
+            </Typography>
             {paymentOptions.size === 1 ? (
               <div className={classes.paymentOptionSelection}>
+                <Typography variant="h4" style={{ color: 'white' }}>
+                  {raffle.proceeds.mint.symbol}
+                </Typography>
                 <div className={classes.paymentOptionLogoContainer}>
                   <img
                     className={classes.paymentOptionLogo}
@@ -426,9 +455,6 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
                     alt={`Logo for ${raffle.proceeds.mint.name}`}
                   />
                 </div>
-                <Typography variant="h4" style={{ color: 'white' }}>
-                  {raffle.proceeds.mint.symbol}
-                </Typography>
               </div>
             ) : (
               <Select
@@ -515,7 +541,10 @@ export const PurchaseTickets: FC<PurchaseTicketsProps> = ({
                 <div className={classes.purchaseButtonContentRight} />
               </>
             ) : (
-              <>Buy ticket {!lamportsEnough && '(Insufficient SOL)'}</>
+              <>
+                Buy ticket{ticketAmount > 1 && 's'}{' '}
+                {!lamportsEnough && '(Insufficient SOL)'}
+              </>
             )}
           </div>
         </Button>

@@ -8,8 +8,6 @@ import { useStyles } from './styles';
 import { useViewport } from '../../hooks/useViewport';
 import { DeviceType } from '../../providers/ViewportProvider';
 import ReactiveButton from 'reactive-button';
-import Footer from '../../components/layout/Footer';
-import Banner from '../../components/layout/Banner/Banner';
 
 const LandingScreen: FC = () => {
   const { device } = useViewport();
@@ -18,20 +16,22 @@ const LandingScreen: FC = () => {
 
   return (
     <div className={classes.root}>
-      <img
-        className={device === DeviceType.Phone ? 'banner-small' : 'banner'}
-        src="raffle.png"
-        alt={'Site banner'}
-        width={device === DeviceType.Phone ? '280px' : '600px'}
-      />
-      <Typography variant="h1" className={classes.titleBar} style={{ fontWeight: 'bold' }}>
-      <br></br>  
+      <Typography
+        variant="h1"
+        className={classes.titleBar}
+        style={{ fontWeight: 'bold' }}
+      >
+        <br></br>
       </Typography>
       <ReactiveButton
         onClick={() => push(routes.RAFFLES)}
         color={'violet'}
-        idleText={'Explore DWOS Raffles'}
-        style={{ fontFamily: "Sora", borderRadius: '5px' }}
+        idleText={'VIEW ALL RAFFLES'}
+        style={{
+          fontFamily: 'Druk Wide Web',
+          fontWeight: 900,
+          borderRadius: '5px',
+        }}
         size={'normal'}
       />
     </div>
@@ -40,9 +40,7 @@ const LandingScreen: FC = () => {
 
 const LandingScreenWithLayout = () => (
   <Screen>
-    <LandingScreen />     
-    <Banner />
-    <Footer />
+    <LandingScreen />
   </Screen>
 );
 

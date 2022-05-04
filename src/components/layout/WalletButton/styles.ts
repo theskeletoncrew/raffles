@@ -5,7 +5,8 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   walletConnectButton: {
     width: '100%',
     backgroundColor: '#6435C9',
-    fontFamily: "Sora",
+    fontFamily: 'Druk Wide Web',
+    fontWeight: 900,
     '&:hover': {
       backgroundColor: '#6435C9',
     },
@@ -13,7 +14,8 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   walletDisconnectButton: {
     width: '100%',
     backgroundColor: '#6435C9',
-    fontFamily: "Sora",
+    fontFamily: 'Druk Wide Web',
+    fontWeight: 900,
     '&:hover': {
       backgroundColor: '#6435C9',
     },

@@ -23,8 +23,12 @@ const App = () => {
             <ProgramApisProvider>
               <RafflesStoreProvider>
                 <Router />
-                  {/** Load font styles directly on the document to prevent flashes */}
-                  <link href='https://fonts.googleapis.com/css2?family=Sora' rel='stylesheet' type='text/css' />
+                {/** Load font styles directly on the document to prevent flashes */}
+                <link
+                  rel="stylesheet"
+                  href="https://use.typekit.net/nxe8kpf.css"
+                  type="text/css"
+                />
                 <Toaster
                   position="bottom-left"
                   reverseOrder={false}

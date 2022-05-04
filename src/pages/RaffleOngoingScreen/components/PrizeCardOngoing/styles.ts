@@ -5,8 +5,8 @@ import { DeviceType } from '../../../../providers/ViewportProvider';
 export const useStyles = makeStyles<Theme, { device: DeviceType }>(
   (theme: Theme) => ({
     root: ({ device }) => ({
-      height: device === DeviceType.Phone ? '25vw' : '260px',
-      width: device === DeviceType.Phone ? '100%' : '200px',
+      height: device === DeviceType.Phone ? '25vw' : '400px',
+      width: device === DeviceType.Phone ? '100%' : '400px',
       position: 'relative',
       cursor: 'pointer',
       '&:hover': {
@@ -23,7 +23,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     media: ({ device }) => ({
       ...(device === DeviceType.Phone
         ? { width: '25vw', height: '25vw' }
-        : { height: '200px' }),
+        : { height: '300px' }),
     }),
     prizeInfo: ({ device }) => ({
       width: '100%',
@@ -48,7 +48,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     }),
     prizeName: {
       marginLeft: '5px',
-      color: '#F3B8C7',
+      color: '#6ef600',
       fontWeight: 'bold',
     },
     cardBadge: {

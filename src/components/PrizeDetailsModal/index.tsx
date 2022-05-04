@@ -32,7 +32,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
   const { device } = useViewport();
   const classes = useStyles({ device });
 
-  const imageUrl = prize.meta.imageUri
+  const imageUrl = prize.meta.imageUri;
 
   return (
     <Modal
@@ -50,7 +50,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
         <div className={classes.content}>
           <div className={classes.header}>
             <IconButton size="small" onClick={() => setIsOpen(false)}>
-              <Close style={{ color: '#F3B8C7' }} />
+              <Close style={{ color: '#6ef600' }} />
             </IconButton>
           </div>
           <div className={classes.body}>
@@ -63,15 +63,51 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
             </div>
             <div className={classes.contentRight}>
               <div>
-                <Typography variant="overline" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>Token</Typography>
-                <Typography variant="body1" style={{ color: '#FFFFFF', fontFamily: 'Sora' }}>{prize.mint.name}</Typography>
+                <Typography
+                  variant="overline"
+                  style={{
+                    color: '#6ef600',
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >
+                  Token
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    color: '#FFFFFF',
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >
+                  {prize.mint.name}
+                </Typography>
               </div>
               <Spacer height={device === DeviceType.Phone ? '5px' : '10px'} />
               {prizeRank !== undefined && (
                 <>
                   <div>
-                    <Typography variant="overline" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>Prize rank</Typography>
-                    <Typography variant="body1" style={{ color: '#FFFFFF', fontFamily: 'Sora' }}>{prizeRank + 1}</Typography>
+                    <Typography
+                      variant="overline"
+                      style={{
+                        color: '#6ef600',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
+                    >
+                      Prize rank
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{
+                        color: '#FFFFFF',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
+                    >
+                      {prizeRank + 1}
+                    </Typography>
                   </div>
                   <Spacer
                     height={device === DeviceType.Phone ? '5px' : '10px'}
@@ -79,8 +115,24 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                 </>
               )}
               <div>
-                <Typography variant="overline" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>Mint address</Typography>
-                <Typography variant="body1" style={{ color: '#FFFFFF', fontFamily: 'Sora' }}>
+                <Typography
+                  variant="overline"
+                  style={{
+                    color: '#6ef600',
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >
+                  Mint address
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    color: '#FFFFFF',
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >
                   {shortenPubkeyString(prize.mint.publicKey)}
                 </Typography>
               </div>
@@ -96,9 +148,14 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   );
                   win?.focus();
                 }}
-                className={classes.ticketButton} style={{ color: '#F3B8C7', fontFamily: 'Sora' }}
+                className={classes.ticketButton}
+                style={{
+                  color: '#6ef600',
+                  fontFamily: 'Druk Wide Web',
+                  fontWeight: 900,
+                }}
               >
-                See on Solscan{' '}
+                View on Solscan{' '}
                 <Launch
                   style={{
                     height: '17px',

@@ -12,8 +12,8 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     }),
     content: ({ device }) => ({
       outline: 'none',
-      width: '50%',
-      minWidth: '250px',
+      width: '85%',
+      minWidth: '300px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

@@ -11,7 +11,7 @@ export interface CountdownProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Countdown: FC<CountdownProps> = ({
   endTimestamp,
-  spacing = '0px',
+  spacing = '2px',
   className,
   ...otherProps
 }) => {

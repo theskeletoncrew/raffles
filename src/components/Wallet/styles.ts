@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   '& root .MuiDialogTitle-root .MuiIconButton-root': {
     color: theme.palette.common.white,
-    fontFamily: 'Sora',
+
+    fontFamily: 'Druk Wide Web',
+    fontWeight: 900,
   },
 }));

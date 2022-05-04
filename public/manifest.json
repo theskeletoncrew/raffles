@@ -1,6 +1,6 @@
 {
-  "name": "DWOS Raffle System",
-  "short_name": "Raffle",
+  "name": "Skeleton Crew Raffles",
+  "short_name": "SC Raffles",
   "icons": [],
   "start_url": ".",
   "display": "standalone",

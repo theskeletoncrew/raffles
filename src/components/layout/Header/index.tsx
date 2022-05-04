@@ -36,8 +36,7 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
         style={{
           width: '100%',
           height: device === DeviceType.Phone ? '50px' : '90px',
-          background:
-            '#F3B8C7',
+          background: '#6ef600',
           backdropFilter: 'blur(3px)',
           zIndex: 98,
         }}
@@ -50,15 +49,7 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
                 <ChevronLeft />
               </IconButton>
             ) : (
-              <IconButton
-              onClick={() => push(routes.HOME)}
-              >
-                <img
-                  src="/logo.png"
-                  alt={'Site banner'}
-                  className={classes.homeButtonIconPhone}
-                />
-              </IconButton>
+              <h1>SKELETON CREW RAFFLES</h1>
             )}
             <IconButton size={'medium'} onClick={() => setIsDrawerOpen(true)}>
               <MenuIcon color="primary" />
@@ -72,17 +63,8 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
           </div>
         ) : (
           <>
-            <div>
-              <IconButton
-                onClick={() => push(routes.HOME)}
-                className={classes.homeButton}
-              >
-                <img
-                  src="/logo.png"
-                  alt={'Site banner'}
-                  className={classes.homeButtonIcon}
-                />
-              </IconButton>
+            <div className={classes.homeButton}>
+              <h1>SKELETON CREW RAFFLES</h1>
             </div>
             <div className={classes.navContainer}>
               {NAV_LINKS_LIST.filter(

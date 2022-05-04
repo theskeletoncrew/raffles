@@ -7,6 +7,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'row',
     width: '100%',
     maxWidth: '900px',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
 }));

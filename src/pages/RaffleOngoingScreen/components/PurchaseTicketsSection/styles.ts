@@ -20,24 +20,24 @@ export const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    textAlign: 'center',
+    justifyContent: 'flex-start',
+    textAlign: 'left',
     marginBottom: '15px',
   },
   ticketAmountSectionLeft: {
-    width: '15%',
+    width: '30px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
   ticketAmountSectionMiddle: {
-    width: '65%',
+    maxWidth: '120px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
   },
   ticketAmountSectionRight: {
-    width: '15%',
+    width: '30px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -46,8 +46,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     color: 'white',
   },
   ticketAmountTextField: {
-    width: '100%',
-    height: '100%',
     '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
       borderColor: 'transparent',
     },
@@ -57,10 +55,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
       fontSize: '15px',
     },
     '& .MuiOutlinedInput-adornedStart': {
-      paddingLeft: '8px',
+      paddingLeft: '0px',
     },
     '& .MuiOutlinedInput-adornedEnd': {
-      paddingRight: '8px',
+      paddingRight: '0px',
     },
   },
   maxButton: {
@@ -110,6 +108,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   paymentOptionSelection: {
     padding: '0',
+    margin: '-8px 0 0 0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -126,7 +125,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   paymentOptionLogoContainer: {
     height: '30px',
     width: '30px',
-    margin: '5px 10px 5px 10px',
+    margin: '5px 5px 5px 5px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -165,19 +164,19 @@ export const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.secondary.main,
   },
   walletBalance: {
-    marginTop: '5px',
-    fontSize: '10px',
-    color: '#777',
-    textAlign: 'left',
+    marginTop: '10px',
+    fontSize: '12px',
+    color: '#aaa',
+    textAlign: 'center',
   },
   countdown: {
-    width: '50%',
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '10px',
+    marginTop: '0px',
     marginBottom: '10px',
     color: '#A442B8',
     fontWeight: 'bold',
+    fontSize: '18px',
   },
   buyButton: {
     display: 'flex',
@@ -186,10 +185,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'Druk Wide Web',
+    fontWeight: 900,
     background: '#6435C9',
     color: 'white',
     '&:hover': {
       backgroundColor: '#6435C9',
-  },
+    },
   },
 }));

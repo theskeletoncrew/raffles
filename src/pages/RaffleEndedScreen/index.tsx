@@ -19,8 +19,6 @@ import useCommonStyles from '../../assets/styles';
 import { useStyles } from './styles';
 import { useViewport } from '../../hooks/useViewport';
 import { DeviceType } from '../../providers/ViewportProvider';
-import Footer from '../../components/layout/Footer';
-import Banner from '../../components/layout/Banner/Banner';
 
 interface IRaffleEndedScreenProps {
   raffle: Raffle;
@@ -97,25 +95,33 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
         <>
           <div className={classes.topSectionPhone}>
             <div className={classes.raffleSubtitlePhone}>
-              <div className={classes.leftTitleSectionPhone}>
-                <IconButton
-                  className={classes.backButton}
-                  onClick={() => push(routes.RAFFLES)}
-                >
-                  <ArrowBack className={classes.backButtonIcon} />
-                </IconButton>
-              </div>
+              <div className={classes.leftTitleSectionPhone}></div>
               <div className={classes.middleTitleSectionPhone}>
-                <Typography variant="h1" style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>{`${raffle.metadata.name}`}</Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: '#000000',
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >{`${raffle.metadata.name}`}</Typography>
               </div>
               <div className={classes.rightTitleSectionPhone}>
                 <Tooltip
-                    title={raffle.endTimestamp.toString()}
-                    placement="bottom"
+                  title={raffle.endTimestamp.toString()}
+                  placement="bottom"
+                >
+                  <Typography
+                    className={classes.raffleSubtitlePhone}
+                    style={{
+                      fontFamily: 'Druk Wide Web',
+                      fontWeight: 900,
+                      color: 'black',
+                      fontSize: '1em',
+                    }}
                   >
-                    <Typography className={classes.raffleSubtitlePhone} style={{ fontFamily: 'Sora', color: 'black', fontWeight: 'bold', fontSize: '1em' }}>
-                      [ended]
-                    </Typography>
+                    [ended]
+                  </Typography>
                 </Tooltip>
               </div>
             </div>
@@ -139,7 +145,16 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
             </div>
           </div>
           <div className={classes.spacer} />
-          <Typography variant="overline" style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>Results</Typography>
+          <Typography
+            variant="overline"
+            style={{
+              color: '#000000',
+              fontFamily: 'Druk Wide Web',
+              fontWeight: 900,
+            }}
+          >
+            Results
+          </Typography>
           <PrizeGalleryEnded
             raffle={raffle}
             entrantWinningTickets={entrantWinningTickets}
@@ -153,22 +168,32 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
         <>
           <div className={classes.topSection}>
             <div className={classes.raffleTitle}>
-              <div className={classes.leftTitleSection}>
-                <IconButton
-                  size="medium"
-                  className={classes.backButton}
-                  onClick={() => push(routes.RAFFLES)}
-                >
-                  <ArrowBack className={classes.backButtonIcon} />
-                </IconButton>
-              </div>
+              <div className={classes.leftTitleSection}></div>
               <div className={classes.middleTitleSection}>
-                <Typography variant="h1" style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>{`${raffle.metadata.name}`}</Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: '#000000',
+
+                    fontFamily: 'Druk Wide Web',
+                    fontWeight: 900,
+                  }}
+                >{`${raffle.metadata.name}`}</Typography>
                 <Tooltip
                   title={raffle.endTimestamp.toString()}
                   placement="bottom"
                 >
-                  <Typography variant="h2" className={classes.raffleSubtitle} style={{ color: '#000000', fontFamily: 'Sora', alignSelf: 'center' }}>
+                  <Typography
+                    variant="h2"
+                    className={classes.raffleSubtitle}
+                    style={{
+                      color: '#000000',
+
+                      fontFamily: 'Druk Wide Web',
+                      fontWeight: 900,
+                      alignSelf: 'center',
+                    }}
+                  >
                     [ended]
                   </Typography>
                 </Tooltip>
@@ -178,8 +203,15 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
           </div>
           <div className={classes.mainContent}>
             <div className={classes.prizesSection}>
-              <Typography variant="overline" style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>
-                Prizes
+              <Typography
+                variant="overline"
+                style={{
+                  color: '#000000',
+                  fontFamily: 'Druk Wide Web',
+                  fontWeight: 900,
+                }}
+              >
+                Prize{raffle.prizes.length > 1 && 's'}
                 {raffle.prizes.length > 3 && (
                   <>
                     {' -'}
@@ -225,7 +257,16 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
           </div>
           <div className={classes.prizeGallerySection}>
             <DoubleArrow className={classes.scrollIcon} />
-            <Typography variant="overline" style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>Results</Typography>
+            <Typography
+              variant="overline"
+              style={{
+                color: '#000000',
+                fontFamily: 'Druk Wide Web',
+                fontWeight: 900,
+              }}
+            >
+              Results
+            </Typography>
             <PrizeGalleryEnded
               raffle={raffle}
               entrantWinningTickets={entrantWinningTickets}
@@ -252,8 +293,6 @@ const RaffleEndedScreenWithLayout: FC<IRaffleEndedDetailsProps> = (props) => {
   return (
     <Screen onBackNavigation={() => push(routes.RAFFLES)}>
       <RaffleEndedScreen {...props} />
-      <Banner />
-      <Footer/>
     </Screen>
   );
 };

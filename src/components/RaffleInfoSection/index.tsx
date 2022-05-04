@@ -15,28 +15,6 @@ import useCommonStyles from '../../assets/styles';
 import { useStyles } from './styles';
 import { useViewport } from '../../hooks/useViewport';
 
-type UserTicketsDialogProps = DialogProps & {
-  setOpen: (isOpen: boolean) => void;
-  userTickets?: number[];
-};
-
-const UserTicketsDialog: FC<UserTicketsDialogProps> = ({
-  setOpen,
-  userTickets,
-  ...props
-}) => {
-  return (
-    <Dialog {...props} onClose={() => setOpen(false)} fullWidth={true}>
-      <DialogTitle>My tickets</DialogTitle>
-      <DialogContent>
-        {userTickets?.map((userTicket) => (
-          <div key={userTicket}>#{userTicket + 1}</div>
-        ))}
-      </DialogContent>
-    </Dialog>
-  );
-};
-
 interface RaffleInfoSectionProps {
   raffle: Raffle;
   userConnected: boolean;
@@ -50,37 +28,68 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
 }) => {
   const { device } = useViewport();
   const classes = { ...useCommonStyles(), ...(useStyles({ device }) as any) };
-  const [open, setOpen] = useState(false);
 
   return (
     <div className={classes.root}>
       <div className={classes.ticketsSection}>
         <div className={classes.totalTickets}>
-          <Typography variant="overline" className={classes.label} style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>
+          <Typography
+            variant="overline"
+            className={classes.label}
+            style={{
+              color: '#6435C9',
+              fontWeight: 'bold',
+            }}
+          >
             Tickets sold
           </Typography>
           <div className={classes.value}>
-            <CountUp
-              start={0}
-              end={raffle.totalTickets}
-              delay={0}
-              duration={0.8}
-              preserveValue
-              useEasing
+            <Typography
+              variant="h4"
+              style={{
+                fontSize: '18px',
+                fontFamily: 'neue-haas-unica, sans-serif',
+              }}
             >
-              {({ countUpRef }) => <Typography variant="h4" ref={countUpRef} />}
-            </CountUp>
-            <Typography variant="h4" className={classes.separator}>
+              {raffle.totalTickets}
+            </Typography>
+            <Typography
+              variant="h4"
+              className={classes.separator}
+              style={{
+                fontSize: '18px',
+                fontFamily: 'neue-haas-unica, sans-serif',
+              }}
+            >
               /
             </Typography>
-            <Typography variant="h4">{`${raffle.entrantsCap}`}</Typography>
+            <Typography
+              variant="h4"
+              style={{
+                fontSize: '18px',
+                fontFamily: 'neue-haas-unica, sans-serif',
+              }}
+            >{`${raffle.entrantsCap}`}</Typography>
           </div>
         </div>
         <div className={classes.ticketPrice}>
-          <Typography variant="overline" className={classes.label} style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>
+          <Typography
+            variant="overline"
+            className={classes.label}
+            style={{
+              color: '#6435C9',
+              fontWeight: 'bold',
+            }}
+          >
             Ticket Price
           </Typography>
-          <Typography variant="h4">
+          <Typography
+            variant="h4"
+            style={{
+              fontSize: '18px',
+              fontFamily: 'neue-haas-unica, sans-serif',
+            }}
+          >
             {`${getDisplayAmount(
               raffle.proceeds.ticketPrice,
               raffle.proceeds.mint
@@ -91,25 +100,29 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
       {userConnected && (
         <div className={classes.ticketsSection}>
           <div className={classes.myTickets}>
-            <Typography variant="overline" className={classes.label} style={{ fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}>
+            <Typography
+              variant="overline"
+              className={classes.label}
+              style={{
+                color: '#6435C9',
+                fontWeight: 'bold',
+              }}
+            >
               My tickets
             </Typography>
             <div className={classes.value}>
-              <CountUp
-                start={0}
-                end={userTickets?.length ?? 0}
-                delay={0}
-                duration={0.8}
-                preserveValue
-                useEasing
+              <Typography
+                variant="h4"
+                style={{
+                  fontSize: '18px',
+                  fontFamily: 'neue-haas-unica, sans-serif',
+                }}
               >
-                {({ countUpRef }) => (
-                  <Typography variant="h4" ref={countUpRef} />
-                )}
-              </CountUp>
+                {userTickets?.length ?? 0}
+              </Typography>
             </div>
           </div>
-          {userTickets?.length && (
+          {/* {userTickets?.length && (
             <div className={classes.showMyTickets}>
               <Button
                 variant="text"
@@ -118,7 +131,9 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
                 onClick={() => {
                   setOpen(true);
                 }}
-                className={classes.ticketButton} style={{ textDecoration: 'underline', fontWeight: 'bold', color: '#6435C9', fontFamily: 'Sora' }}
+                className={classes.ticketButton} style={{ textDecoration: 'underline', color: '#6435C9', 
+        fontFamily: 'Druk Wide Web',
+        fontWeight: 900 }}
               >
                 View my tickets
               </Button>
@@ -128,7 +143,7 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
                 setOpen={setOpen}
               />        
             </div>
-          )}
+          )} */}
         </div>
       )}
     </div>

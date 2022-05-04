@@ -16,8 +16,6 @@ import { useStyles } from './styles';
 import PrizeGalleryOngoing from './components/PrizeGalleryOngoing';
 import { useViewport } from '../../hooks/useViewport';
 import { DeviceType } from '../../providers/ViewportProvider';
-import Footer from '../../components/layout/Footer';
-import Banner from '../../components/layout/Banner/Banner';
 
 interface IRaffleOngoingScreenProps {
   raffle: Raffle;
@@ -48,7 +46,10 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
     <div className={classes.root}>
       {device === DeviceType.Phone ? (
         <>
-          <Typography variant="h1" style={{ fontWeight: 'bold', color: '#6435C9' }}>{`${raffle.metadata.name}`}</Typography>
+          <Typography
+            variant="h1"
+            style={{ fontWeight: 'bold', color: '#000000' }}
+          >{`${raffle.metadata.name}`}</Typography>
           <div className={classes.spacer} />
           <RaffleInfoSection
             raffle={raffle}
@@ -56,7 +57,12 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
             userTickets={entrant?.tickets}
           />
           <div className={classes.spacer} />
-          <Typography variant="overline" style={{ fontWeight: 'bold', color: '#6435C9' }}>Prizes</Typography>
+          <Typography
+            variant="overline"
+            style={{ fontWeight: 'bold', color: '#6435C9' }}
+          >
+            Prize{raffle.prizes.length > 1 && 's'}
+          </Typography>
           <PrizeGalleryOngoing raffle={raffle} scrollRef={prizeGalleryRef} />
           <div className={classes.spacer} />
           {draffleClient.provider.wallet.publicKey ? (
@@ -70,17 +76,16 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
         <>
           <div className={classes.topSection}>
             <div className={classes.raffleTitle}>
-              <div className={classes.leftTitleSection}>
-                <IconButton
-                  size="medium"
-                  className={classes.backButton}
-                  onClick={() => push(routes.RAFFLES)}
-                >
-                  <ArrowBack />
-                </IconButton>
-              </div>
+              <div className={classes.leftTitleSection}></div>
               <div className={classes.middleTitleSection}>
-                <Typography variant="h1" style={{ fontWeight: 'bold', color: '#6435C9' }}>{`${raffle.metadata.name}`}</Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontWeight: 'bold',
+                    color: '#000000',
+                    textTransform: 'uppercase',
+                  }}
+                >{`${raffle.metadata.name}`}</Typography>
               </div>
               <div className={classes.rightTitleSection}></div>
             </div>
@@ -88,8 +93,12 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
           <div className={classes.spacer2} />
           <div className={classes.mainContent}>
             <div className={classes.prizesSection}>
-              <Typography variant="overline" className={classes.prizesHeader} style={{ fontWeight: 'bold', color: '#6435C9' }}>
-                Prizes
+              <Typography
+                variant="overline"
+                className={classes.prizesHeader}
+                style={{ fontWeight: 'bold', color: '#6435C9' }}
+              >
+                Prize{raffle.prizes.length > 1 && 's'}
                 {raffle.prizes.length > 3 && (
                   <>
                     {' -'}
@@ -152,10 +161,27 @@ const ConnectActionSection: FC = () => {
     <div className={classes.actionSection}>
       <div className={classes.actionSectionInner}>
         <div className={classes.actionTagline}>
-          <Typography variant="h3" className={classes.textHighlight} style={{ fontWeight: 'bold', color: '#F3B8C7', fontFamily: 'Sora' }}>
+          <Typography
+            variant="h3"
+            className={classes.textHighlight}
+            style={{
+              color: '#6ef600',
+              fontFamily: 'Druk Wide Web',
+              fontWeight: 900,
+            }}
+          >
             Tickets are still available.
           </Typography>
-          <Typography variant="body1" style={{ fontWeight: 'bold', color: 'white', fontFamily: 'Sora' }}>Don't miss out!</Typography>
+          <Typography
+            variant="body1"
+            style={{
+              color: 'white',
+              fontFamily: 'Druk Wide Web',
+              fontWeight: 900,
+            }}
+          >
+            Don't miss out!
+          </Typography>
         </div>
         <WalletMultiButton
           className={`${classes.mainButton} ${classes.connectToBuyButton}`}
@@ -180,8 +206,6 @@ const RaffleOngoingScreenWithLayout: FC<IRaffleOngoingDetailsProps> = (
   return (
     <Screen onBackNavigation={() => push(routes.RAFFLES)}>
       <RaffleOngoingScreen {...props} />
-      <Banner />
-      <Footer/>
     </Screen>
   );
 };

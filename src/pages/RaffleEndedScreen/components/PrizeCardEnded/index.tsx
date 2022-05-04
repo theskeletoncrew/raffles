@@ -50,7 +50,7 @@ const PrizeCardEnded: FC<PrizeCardEndedProps> = ({
   const imageUrl = prize.meta.imageUri;
 
   const maxPrizeNameLength = useMemo(
-    () => (device === DeviceType.Phone ? 14 : 18),
+    () => (device === DeviceType.Phone ? 21 : 32),
     [device]
   );
 
@@ -92,9 +92,6 @@ const PrizeCardEnded: FC<PrizeCardEndedProps> = ({
         <CardActions className={classes.prizeInfo}>
           <div className={classes.prizeInfoInner}>
             <div className={classes.prizeNameRow}>
-              <Typography variant="body1" style={{ color: '#F3B8C7', fontWeight: 'bold', fontFamily: 'Sora' }}>
-                {index !== undefined && `#${index + 1} `}
-              </Typography>
               <Typography variant="body1" className={classes.prizeName}>
                 <ShortenedString
                   message={prize.mint.name}
@@ -106,14 +103,24 @@ const PrizeCardEnded: FC<PrizeCardEndedProps> = ({
             <div className={classes.winnerSection}>
               {winner !== undefined ? (
                 <div>
-                  <Typography variant="body1" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>{`Winner: #${String(
-                    winner + 1
-                  ).padStart(4, '0')}`}</Typography>
                   <div className={classes.winnerRow}>
-                    <Typography variant="body1" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>Pubkey: </Typography>
                     <Typography
                       variant="body1"
-                      style={{ color: 'white', fontFamily: 'Sora' }}
+                      style={{
+                        color: '#6ef600',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
+                    >
+                      Winner:{' '}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{
+                        color: 'white',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
                       className={classes.winnerPubkey}
                     >
                       {shortenPubkeyString(raffle.entrantsRaw[winner])}
@@ -122,8 +129,25 @@ const PrizeCardEnded: FC<PrizeCardEndedProps> = ({
                 </div>
               ) : (
                 <>
-                  <Typography variant="body1" style={{ color: '#F3B8C7', fontFamily: 'Sora' }}>Drawing...</Typography>
-                  <Typography variant="body1" className={classes.winnertTicket} style={{ color: 'white', fontFamily: 'Sora' }}>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      color: '#6ef600',
+                      fontFamily: 'Druk Wide Web',
+                      fontWeight: 900,
+                    }}
+                  >
+                    Drawing...
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    className={classes.winnertTicket}
+                    style={{
+                      color: 'white',
+                      fontFamily: 'Druk Wide Web',
+                      fontWeight: 900,
+                    }}
+                  >
                     <RandomTicketDrawer endRange={raffle.totalTickets} />
                   </Typography>
                 </>

@@ -50,8 +50,8 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     prizeName: {
       color: 'white',
       marginLeft: '5px',
-      fontWeight: 'bold',
-      fontFamily: 'Sora',
+      fontFamily: 'Druk Wide Web',
+      fontWeight: 900,
     },
     winnerSection: {
       width: '100%',

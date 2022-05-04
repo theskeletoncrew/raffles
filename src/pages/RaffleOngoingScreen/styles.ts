@@ -111,10 +111,12 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       width: '80%',
       height: '40px',
       background: '#6435C9',
-      fontFamily: 'Sora',
+      fontFamily: 'Druk Wide Web',
+      fontWeight: 900,
+      fontSize: '12px',
       '&:hover': {
         backgroundColor: '#6435C9',
-    },
+      },
     },
     scrollIcon: {
       color: theme.palette.common.white,

@@ -8,6 +8,8 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     root: ({ device }) => ({
       width: '100%',
       height: device === DeviceType.Phone ? '50px' : '90px',
+      fontFamily: 'Druk Wide Web',
+      fontWeight: 900,
     }),
     drawerHeader: () => ({
       width: '100%',
@@ -23,7 +25,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       justifyContent: 'space-between',
       backgroundColor: 'white',
       alignItems: 'center',
-      zIndex: 99
+      zIndex: 99,
     }),
     navContainer: {
       display: 'flex',

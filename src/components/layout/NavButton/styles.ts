@@ -6,10 +6,10 @@ export const useStyles = makeStyles<Theme, { isCurrent: boolean }>(
   (theme: Theme) => ({
     navButtons: ({ isCurrent }) => ({
       fontSize: '16px',
-      fontFamily: 'Sora',
+      fontFamily: 'Druk Wide Web',
+      fontWeight: 900,
       textTransform: 'none',
-      fontWeight: 'bold',
-      color: "black",
+      color: 'black',
       '&:hover': {
         backgroundColor: 'transparent',
       },

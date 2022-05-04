@@ -10,10 +10,8 @@ import Screen from '../../components/layout/Screen';
 import { Raffle } from '../../lib/types';
 import { useViewport } from '../../hooks/useViewport';
 import FilterBar from './components/FilterBar';
-import { DeviceType } from '../../providers/ViewportProvider';
-import Footer from '../../components/layout/Footer';
-import Banner from '../../components/layout/Banner/Banner';
 import Spacer from '../../components/Spacer';
+import { DeviceType } from '../../providers/ViewportProvider';
 
 const ExploreRafflesScreen: FC = () => {
   const { device } = useViewport();
@@ -46,12 +44,6 @@ const ExploreRafflesScreen: FC = () => {
   if (raffles.size === 0 && fetching)
     return (
       <>
-        <img
-          className={device === DeviceType.Phone ? 'banner-small' : 'banner'}
-          src="raffle.png"
-          alt={'Site banner'}
-          width={device === DeviceType.Phone ? '280px' : '600px'}
-        />
         <div className={classes.mainContent}>
           <CircularProgress color="secondary" />
         </div>
@@ -61,12 +53,6 @@ const ExploreRafflesScreen: FC = () => {
   if (raffles.size === 0)
     return (
       <>
-        <img
-          className={device === DeviceType.Phone ? 'banner-small' : 'banner'}
-          src="raffle.png"
-          alt={'Site banner'}
-          width={device === DeviceType.Phone ? '280px' : '600px'}
-        />
         <Typography variant="h4" className={classes.mainContent}>
           More Raffle Pools will be coming soon!
         </Typography>
@@ -75,14 +61,6 @@ const ExploreRafflesScreen: FC = () => {
 
   return (
     <>
-
-      <img
-        className={device === DeviceType.Phone ? 'banner-small' : 'banner'}
-        src="raffle.png"
-        alt={'Site banner'}
-        width={device === DeviceType.Phone ? '280px' : '600px'}
-      />
-
       <FilterBar
         hideEndedRaffles={hideEndedRaffles}
         setHideEndedRaffles={setHideEndedRaffles}
@@ -106,9 +84,16 @@ const ExploreRafflesScreen: FC = () => {
             ))}
         </Grid>
       ) : (
-        <><Typography variant="h4" className={classes.mainContent} style={{ color: '#6435C9' }}>
+        <>
+          <Typography
+            variant="h4"
+            className={classes.mainContent}
+            style={{ color: '#000000' }}
+          >
             No Raffle Pools to display.
-          </Typography><Spacer height={'200px'} /></>
+          </Typography>
+          <Spacer height={'200px'} />
+        </>
       )}
     </>
   );
@@ -116,9 +101,7 @@ const ExploreRafflesScreen: FC = () => {
 
 const ExploreRafflesScreenWithLayout = () => (
   <Screen>
-    <ExploreRafflesScreen />  
-    <Banner />
-    <Footer/>
+    <ExploreRafflesScreen />
   </Screen>
 );
 

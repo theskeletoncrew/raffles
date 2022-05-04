@@ -18,24 +18,15 @@ const tokenRegistry = {
       imageURI: '/resources/solana-logo.gif',
     },
   },
-  'tDWgfue1v4JNMHmgxi7Qd2xzNpLhGFhaghcwAvnsYsv': {
+  SKu11EypaFU3gvr8VSAbi13zEC2CPvqbz9s83N3tWHM: {
     chainId: 101,
-    address: 'tDWgfue1v4JNMHmgxi7Qd2xzNpLhGFhaghcwAvnsYsv',
-    symbol: 'tDWOS',
-    name: '$t',
-    decimals: 4,
-    logoURI: '/resources/tdwos.png',
-    tags: []
+    address: 'SKu11EypaFU3gvr8VSAbi13zEC2CPvqbz9s83N3tWHM',
+    symbol: '$SKULL',
+    name: 'SKULL',
+    decimals: 0,
+    logoURI: '/resources/skulltoken.gif',
+    tags: [],
   },
-  'gDWFpMSB8JFVn4NNjiP9Y9EfKTtJ3M5dpUusKuS4mFn': {
-    chainId: 101,
-    address: 'gDWFpMSB8JFVn4NNjiP9Y9EfKTtJ3M5dpUusKuS4mFn',
-    symbol: 'gDWOS',
-    name: '$g',
-    decimals: 4,
-    logoURI: '/resources/gdwos.png',
-    tags: []
-  }
 };
 
 export const tokenInfoMap = new Map(Object.entries(tokenRegistry));

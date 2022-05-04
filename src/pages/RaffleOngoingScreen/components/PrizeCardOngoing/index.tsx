@@ -36,7 +36,7 @@ const PrizeCardOngoing: FC<PrizeCardOngoingProps> = ({
   const imageUrl = prize.meta.imageUri;
 
   const maxPrizeNameLength = useMemo(
-    () => (device === DeviceType.Phone ? 14 : 18),
+    () => (device === DeviceType.Phone ? 21 : 32),
     [device]
   );
 
@@ -78,9 +78,6 @@ const PrizeCardOngoing: FC<PrizeCardOngoingProps> = ({
         />
         <CardActions className={classes.prizeInfo}>
           <div className={classes.prizeNameRow}>
-            <Typography variant="body1">
-              {index !== undefined && `#${index + 1} `}
-            </Typography>
             <Typography variant="body1" className={classes.prizeName}>
               <ShortenedString
                 message={prize.mint.name}
