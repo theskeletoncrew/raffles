@@ -76,17 +76,6 @@ const PrizeCardOngoing: FC<PrizeCardOngoingProps> = ({
           style={isLoaded ? {} : { display: 'none' }}
           onLoad={() => setIsLoaded(true)}
         />
-        <CardActions className={classes.prizeInfo}>
-          <div className={classes.prizeNameRow}>
-            <Typography variant="body1" className={classes.prizeName}>
-              <ShortenedString
-                message={prize.mint.name}
-                maxCharLength={maxPrizeNameLength}
-                addTooltip
-              />
-            </Typography>
-          </div>
-        </CardActions>
       </Card>
     </>
   );

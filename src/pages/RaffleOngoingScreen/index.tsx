@@ -57,12 +57,6 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
             userTickets={entrant?.tickets}
           />
           <div className={classes.spacer} />
-          <Typography
-            variant="overline"
-            style={{ fontWeight: 'bold', color: '#6435C9' }}
-          >
-            Prize{raffle.prizes.length > 1 && 's'}
-          </Typography>
           <PrizeGalleryOngoing raffle={raffle} scrollRef={prizeGalleryRef} />
           <div className={classes.spacer} />
           {draffleClient.provider.wallet.publicKey ? (
@@ -93,31 +87,6 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
           <div className={classes.spacer2} />
           <div className={classes.mainContent}>
             <div className={classes.prizesSection}>
-              <Typography
-                variant="overline"
-                className={classes.prizesHeader}
-                style={{ fontWeight: 'bold', color: '#6435C9' }}
-              >
-                Prize{raffle.prizes.length > 1 && 's'}
-                {raffle.prizes.length > 3 && (
-                  <>
-                    {' -'}
-                    <Button
-                      className={classes.labelPrizeAmount}
-                      variant="text"
-                      disableRipple
-                      onClick={() =>
-                        prizeGalleryRef.current?.scrollIntoView({
-                          behavior: 'smooth',
-                          block: 'start',
-                        })
-                      }
-                    >
-                      <span>See all {raffle.prizes.length}</span>
-                    </Button>
-                  </>
-                )}
-              </Typography>
               <PrizeShowcaseOngoing prizes={raffle.prizes} />
             </div>
             <div className={classes.detailsSection}>

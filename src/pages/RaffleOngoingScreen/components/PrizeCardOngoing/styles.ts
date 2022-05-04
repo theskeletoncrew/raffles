@@ -5,8 +5,6 @@ import { DeviceType } from '../../../../providers/ViewportProvider';
 export const useStyles = makeStyles<Theme, { device: DeviceType }>(
   (theme: Theme) => ({
     root: ({ device }) => ({
-      height: device === DeviceType.Phone ? '25vw' : '400px',
-      width: device === DeviceType.Phone ? '100%' : '400px',
       position: 'relative',
       cursor: 'pointer',
       '&:hover': {
@@ -19,11 +17,6 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       display: 'flex',
       flexDirection: device === DeviceType.Phone ? 'row' : 'column',
       justifyContent: device === DeviceType.Phone ? 'flex-start' : 'center',
-    }),
-    media: ({ device }) => ({
-      ...(device === DeviceType.Phone
-        ? { width: '25vw', height: '25vw' }
-        : { height: '300px' }),
     }),
     prizeInfo: ({ device }) => ({
       width: '100%',

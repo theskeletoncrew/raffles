@@ -49,7 +49,7 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
                 <ChevronLeft />
               </IconButton>
             ) : (
-              <h1>SKELETON CREW RAFFLES</h1>
+              <h1 style={{ fontSize: '20px' }}>SKELETON CREW RAFFLES</h1>
             )}
             <IconButton size={'medium'} onClick={() => setIsDrawerOpen(true)}>
               <MenuIcon color="primary" />
@@ -64,7 +64,7 @@ const Header: FC<HeaderProps> = ({ onBackNavigation }) => {
         ) : (
           <>
             <div className={classes.homeButton}>
-              <h1>SKELETON CREW RAFFLES</h1>
+              <h1 style={{ fontSize: '20px' }}>SKELETON CREW RAFFLES</h1>
             </div>
             <div className={classes.navContainer}>
               {NAV_LINKS_LIST.filter(

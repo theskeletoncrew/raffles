@@ -90,7 +90,7 @@ const ExploreRafflesScreen: FC = () => {
             className={classes.mainContent}
             style={{ color: '#000000' }}
           >
-            No Raffle Pools to display.
+            NO RAFFLES TO DISPLAY.
           </Typography>
           <Spacer height={'200px'} />
         </>

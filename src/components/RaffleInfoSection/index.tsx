@@ -53,7 +53,7 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
             >
               {raffle.totalTickets}
             </Typography>
-            <Typography
+            {/* <Typography
               variant="h4"
               className={classes.separator}
               style={{
@@ -69,7 +69,7 @@ const RaffleInfoSection: FC<RaffleInfoSectionProps> = ({
                 fontSize: '18px',
                 fontFamily: 'neue-haas-unica, sans-serif',
               }}
-            >{`${raffle.entrantsCap}`}</Typography>
+            >{`${raffle.entrantsCap}`}</Typography> */}
           </div>
         </div>
         <div className={classes.ticketPrice}>
