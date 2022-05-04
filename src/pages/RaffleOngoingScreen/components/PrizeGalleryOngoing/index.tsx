@@ -37,6 +37,7 @@ const PrizeGallery: FC<PrizeGalleryProps> = ({ raffle, scrollRef }) => {
                 key={prizeIndex}
                 className={classes.prizeItem}
                 prize={prize}
+                raffle={raffle}
                 index={prizeIndex}
               />
             </Grid>

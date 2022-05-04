@@ -50,6 +50,8 @@ export interface Proceeds {
 
 export interface RaffleMetaData {
   name: string;
+  artist: string;
+  description?: string;
   overviewImageUri?: string;
   alternatePurchaseMints?: PublicKey[];
 }

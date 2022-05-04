@@ -15,7 +15,12 @@ import {
 } from './ProgramApisProvider';
 import { useProgramApis } from '../hooks/useProgramApis';
 import { Entrant, Raffle, RaffleMetaData } from '../lib/types';
-import { fetchPrizes, fetchProceedsAccount, getRaffleProgramAccounts, toEntrantsProcessed } from '../lib/store';
+import {
+  fetchPrizes,
+  fetchProceedsAccount,
+  getRaffleProgramAccounts,
+  toEntrantsProcessed,
+} from '../lib/store';
 import { cloneDeep } from 'lodash';
 import { areEqualObjects } from '../lib/utils';
 import { useConnection } from '@solana/wallet-adapter-react';
@@ -72,7 +77,11 @@ const RafflesStoreProvider: FC = ({ children = null as any }) => {
 
     entrants = toEntrantsProcessed(entrantsDataRaw);
 
-    const prizes = await fetchPrizes(raffleRaw.publicKey, draffleClient, raffleRaw.account.totalPrizes);
+    const prizes = await fetchPrizes(
+      raffleRaw.publicKey,
+      draffleClient,
+      raffleRaw.account.totalPrizes
+    );
 
     const endTimestamp = new Date(
       raffleRaw.account.endTimestamp.toNumber() * 1000
@@ -123,6 +132,7 @@ const RafflesStoreProvider: FC = ({ children = null as any }) => {
               raffleRaw,
               RAFFLES_WHITELIST.get(raffleRaw.publicKey.toString()) || {
                 name: 'Unnamed Raffle',
+                artist: 'Unknown Artist',
                 alternatePurchaseMints: [],
               },
               draffleClient,

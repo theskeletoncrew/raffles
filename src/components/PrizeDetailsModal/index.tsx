@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 
 import { useViewport } from '../../hooks/useViewport';
-import { Prize, PrizeType } from '../../lib/types';
+import { Prize, PrizeType, Raffle } from '../../lib/types';
 import { useStyles } from './styles';
 import { shortenPubkeyString } from '../../lib/utils';
 import { Close, Launch } from '@material-ui/icons';
@@ -21,6 +21,7 @@ interface PrizeDetailsModalProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   prize: Prize;
   prizeRank?: number;
+  raffle?: Raffle;
 }
 
 const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
@@ -28,6 +29,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
   setIsOpen,
   prize,
   prizeRank,
+  raffle,
 }) => {
   const { device } = useViewport();
   const classes = useStyles({ device });
@@ -71,7 +73,7 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                     fontWeight: 900,
                   }}
                 >
-                  Token
+                  TITLE
                 </Typography>
                 <Typography
                   variant="body1"
@@ -85,6 +87,63 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                 </Typography>
               </div>
               <Spacer height={device === DeviceType.Phone ? '5px' : '10px'} />
+
+              {raffle && (
+                <>
+                  <div>
+                    <Typography
+                      variant="overline"
+                      style={{
+                        color: '#6ef600',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
+                    >
+                      ARTIST
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{
+                        color: '#FFFFFF',
+                        fontFamily: 'neue-haas-unica, sans-serif',
+                        fontSize: '13px',
+                      }}
+                    >
+                      {raffle.metadata.artist}
+                    </Typography>
+                  </div>
+                  <Spacer
+                    height={device === DeviceType.Phone ? '5px' : '10px'}
+                  />
+
+                  <div>
+                    <Typography
+                      variant="overline"
+                      style={{
+                        color: '#6ef600',
+                        fontFamily: 'Druk Wide Web',
+                        fontWeight: 900,
+                      }}
+                    >
+                      DESCRIPTION
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{
+                        color: '#FFFFFF',
+                        fontFamily: 'neue-haas-unica, sans-serif',
+                        fontSize: '13px',
+                      }}
+                    >
+                      {`${raffle.metadata.description}`}
+                    </Typography>
+                  </div>
+                  <Spacer
+                    height={device === DeviceType.Phone ? '5px' : '10px'}
+                  />
+                </>
+              )}
+
               {prizeRank !== undefined && (
                 <>
                   <div>
@@ -102,8 +161,8 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                       variant="body1"
                       style={{
                         color: '#FFFFFF',
-                        fontFamily: 'Druk Wide Web',
-                        fontWeight: 900,
+                        fontFamily: 'neue-haas-unica, sans-serif',
+                        fontSize: '13px',
                       }}
                     >
                       {prizeRank + 1}
@@ -129,11 +188,11 @@ const PrizeDetailsModal: FC<PrizeDetailsModalProps> = ({
                   variant="body1"
                   style={{
                     color: '#FFFFFF',
-                    fontFamily: 'Druk Wide Web',
-                    fontWeight: 900,
+                    fontFamily: 'neue-haas-unica, sans-serif',
+                    fontSize: '13px',
                   }}
                 >
-                  {shortenPubkeyString(prize.mint.publicKey)}
+                  {prize.mint.publicKey.toString()}
                 </Typography>
               </div>
               <Spacer height={device === DeviceType.Phone ? '5px' : '10px'} />

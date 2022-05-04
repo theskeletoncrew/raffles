@@ -34,7 +34,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'top',
       marginBottom: '20px',
     }),
     media: {

@@ -41,11 +41,9 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     },
     leftTitleSection: {
       width: '10%',
-      display: 'flex',
     },
     middleTitleSection: {
       width: '90%',
-      display: 'flex',
       justifyContent: 'center',
       textAlign: 'center',
     },
@@ -113,7 +111,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       background: '#6435C9',
       fontFamily: 'Druk Wide Web',
       fontWeight: 900,
-      fontSize: '12px',
+      fontSize: '11px',
       '&:hover': {
         backgroundColor: '#6435C9',
       },

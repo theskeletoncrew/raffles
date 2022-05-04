@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '20px',
     width: '80%',
     height: '40px',
-    fontSize: '12px',
+    fontSize: '11px',
     background: '#6435C9',
     fontFamily: 'Druk Wide Web',
     fontWeight: 900,

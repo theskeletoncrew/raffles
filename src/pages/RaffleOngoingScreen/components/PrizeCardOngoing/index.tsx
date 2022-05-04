@@ -16,15 +16,18 @@ import { useViewport } from '../../../../hooks/useViewport';
 import ShortenedString from '../../../../components/ShortenedString';
 import { DeviceType } from '../../../../providers/ViewportProvider';
 import PrizeDetailsModal from '../../../../components/PrizeDetailsModal';
+import { Raffle } from '../../../../lib/types';
 
 export interface PrizeCardOngoingProps
   extends StandardProps<PaperProps, CardClassKey> {
   prize: Prize;
+  raffle?: Raffle;
   index?: number;
 }
 
 const PrizeCardOngoing: FC<PrizeCardOngoingProps> = ({
   prize,
+  raffle,
   index,
   className,
   ...otherProps
@@ -47,6 +50,7 @@ const PrizeCardOngoing: FC<PrizeCardOngoingProps> = ({
         setIsOpen={setIsModalOpen}
         prize={prize}
         prizeRank={index}
+        raffle={raffle}
       />
       <Card
         onClick={() => {

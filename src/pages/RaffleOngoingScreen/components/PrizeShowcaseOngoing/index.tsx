@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
 import { Grid } from '@material-ui/core';
 
-import { Prize } from '../../../../lib/types';
+import { Prize, Raffle } from '../../../../lib/types';
 import PrizeCardOngoing from '../PrizeCardOngoing';
 import useCommonStyles from '../../../../assets/styles';
 import { useStyles } from './styles';
 
 export interface PrizeShowcaseProps {
   prizes: Prize[];
+  raffle?: Raffle;
 }
 
-export const PrizeShowcase: FC<PrizeShowcaseProps> = ({ prizes }) => {
+export const PrizeShowcase: FC<PrizeShowcaseProps> = ({ prizes, raffle }) => {
   const classes = { ...useCommonStyles(), ...useStyles() };
 
   if (prizes.length === 0) return <div className={classes.root}>No prizes</div>;
@@ -25,7 +26,11 @@ export const PrizeShowcase: FC<PrizeShowcaseProps> = ({ prizes }) => {
           className={classes.prizesGrid}
         >
           <Grid item>
-            <PrizeCardOngoing prize={prizes[0]} className={classes.prizeItem} />
+            <PrizeCardOngoing
+              prize={prizes[0]}
+              raffle={raffle}
+              className={classes.prizeItem}
+            />
           </Grid>
         </Grid>
       </div>

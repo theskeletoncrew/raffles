@@ -46,10 +46,16 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
     <div className={classes.root}>
       {device === DeviceType.Phone ? (
         <>
-          <Typography
-            variant="h1"
-            style={{ fontWeight: 'bold', color: '#000000' }}
-          >{`${raffle.metadata.name}`}</Typography>
+          <div>
+            <Typography
+              variant="h1"
+              style={{
+                fontWeight: 'bold',
+                color: '#000000',
+                textTransform: 'uppercase',
+              }}
+            >{`${raffle.metadata.name}`}</Typography>
+          </div>
           <div className={classes.spacer} />
           <RaffleInfoSection
             raffle={raffle}
@@ -79,7 +85,20 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
                     color: '#000000',
                     textTransform: 'uppercase',
                   }}
-                >{`${raffle.metadata.name}`}</Typography>
+                >
+                  &ldquo;{`${raffle.metadata.name}`}&rdquo;
+                </Typography>
+                <br />
+                <Typography
+                  variant="h2"
+                  style={{
+                    fontWeight: 'bold',
+                    color: '#000000',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  BY {`${raffle.metadata.artist}`}
+                </Typography>
               </div>
               <div className={classes.rightTitleSection}></div>
             </div>
@@ -87,7 +106,7 @@ const RaffleOngoingScreen: FC<IRaffleOngoingScreenProps> = ({
           <div className={classes.spacer2} />
           <div className={classes.mainContent}>
             <div className={classes.prizesSection}>
-              <PrizeShowcaseOngoing prizes={raffle.prizes} />
+              <PrizeShowcaseOngoing prizes={raffle.prizes} raffle={raffle} />
             </div>
             <div className={classes.detailsSection}>
               <RaffleInfoSection
