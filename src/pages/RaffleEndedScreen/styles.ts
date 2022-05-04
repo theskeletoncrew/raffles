@@ -97,6 +97,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     }),
     actionSectionContainer: {
       width: '100%',
+      padding: '10px 0',
     },
     totalTickets: {
       marginRight: '80px',
@@ -107,6 +108,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop: '50px',
     },
     scrollIcon: {
       color: theme.palette.common.white,

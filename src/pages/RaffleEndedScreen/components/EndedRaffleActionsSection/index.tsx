@@ -59,8 +59,6 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
           variant="body1"
           style={{
             color: 'white',
-            fontFamily: 'Druk Wide Web',
-            fontWeight: 900,
           }}
         >
           Connect your wallet to check if you have won any prizes!
@@ -91,8 +89,6 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
           variant="body1"
           style={{
             color: 'white',
-            fontFamily: 'Druk Wide Web',
-            fontWeight: 900,
           }}
         >
           Stay tuned!
@@ -158,11 +154,6 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
           <Button
             className={classes.scrollLink}
             variant="text"
-            style={{
-              color: '#000000',
-              fontFamily: 'Druk Wide Web',
-              fontWeight: 900,
-            }}
             onClick={() =>
               scrollRef.current?.scrollIntoView({
                 behavior: 'smooth',
@@ -170,9 +161,8 @@ const EndedRaffleActionSection: FC<EndedRaffleActionsSectionProps> = ({
               })
             }
           >
-            Scroll down
+            Claim your prize(s) below!
           </Button>
-          to claim your prize(s)!
         </Typography>
       </div>
     </div>

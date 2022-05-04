@@ -39,7 +39,11 @@ const ClaimButton: FC<ClaimButtonProps> = ({
         }}
         color={'violet'}
         width={'100%'}
-        idleText={'Claim Your Prize'}
+        idleText={
+          prize.amount.isZero() || !!claimOngoing.get(prizeIndex)
+            ? 'CLAIMED'
+            : 'CLAIM YOUR PRIZE'
+        }
         size={'normal'}
         onClick={async () => {
           setClaimOngoing((state) => cloneDeep(state.set(prizeIndex, true)));
@@ -60,7 +64,7 @@ const ClaimButton: FC<ClaimButtonProps> = ({
               <div className={classes.claimButtonContentRight} />
             </>
           ) : (
-            <>Claim</>
+            <>CLAIM</>
           )}
         </div>
       </ReactiveButton>

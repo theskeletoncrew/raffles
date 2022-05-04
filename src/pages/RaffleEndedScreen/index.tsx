@@ -178,30 +178,21 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
                     fontFamily: 'Druk Wide Web',
                     fontWeight: 900,
                   }}
-                >{`${raffle.metadata.name}`}</Typography>
-                <Tooltip
-                  title={raffle.endTimestamp.toString()}
-                  placement="bottom"
                 >
-                  <Typography
-                    variant="h2"
-                    className={classes.raffleSubtitle}
-                    style={{
-                      color: '#000000',
-
-                      fontFamily: 'Druk Wide Web',
-                      fontWeight: 900,
-                      alignSelf: 'center',
-                    }}
+                  {`${raffle.metadata.name}`}
+                  <Tooltip
+                    title={raffle.endTimestamp.toString()}
+                    placement="bottom"
                   >
-                    [ended]
-                  </Typography>
-                </Tooltip>
+                    <span> (ended)</span>
+                  </Tooltip>
+                </Typography>
               </div>
               <div className={classes.rightTitleSection}></div>
             </div>
           </div>
           <div className={classes.mainContent}>
+            {/* 
             <div className={classes.prizesSection}>
               <Typography
                 variant="overline"
@@ -235,6 +226,25 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
                 raffle={raffle}
                 winningTickets={winningTickets}
               />
+            </div> */}
+            <div className={classes.prizeGallerySection}>
+              <Typography
+                variant="overline"
+                style={{
+                  color: '#000000',
+                  fontFamily: 'Druk Wide Web',
+                  fontWeight: 900,
+                }}
+              >
+                Results
+              </Typography>
+              <PrizeGalleryEnded
+                raffle={raffle}
+                entrantWinningTickets={entrantWinningTickets}
+                winningTickets={winningTickets}
+                claimPrize={claimPrize}
+                scrollRef={prizeGalleryRef}
+              />
             </div>
             <div className={classes.detailsSection}>
               <RaffleInfoSection
@@ -243,7 +253,10 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
                 userTickets={entrant?.tickets}
               />
               <div className={classes.actionSectionContainer}>
-                <div className={classes.actionSection}>
+                <div
+                  className={classes.actionSection}
+                  style={{ padding: '20px' }}
+                >
                   <EndedRaffleActionSection
                     raffle={raffle}
                     userPubkey={draffleClient.provider.wallet.publicKey}
@@ -255,7 +268,7 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
               </div>
             </div>
           </div>
-          <div className={classes.prizeGallerySection}>
+          {/* <div className={classes.prizeGallerySection}>
             <DoubleArrow className={classes.scrollIcon} />
             <Typography
               variant="overline"
@@ -274,7 +287,7 @@ const RaffleEndedScreen: FC<IRaffleEndedScreenProps> = ({
               claimPrize={claimPrize}
               scrollRef={prizeGalleryRef}
             />
-          </div>
+          </div> */}
         </>
       )}
       <div className={classes.spacer} />

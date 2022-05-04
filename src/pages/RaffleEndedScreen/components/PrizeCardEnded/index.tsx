@@ -118,8 +118,7 @@ const PrizeCardEnded: FC<PrizeCardEndedProps> = ({
                       variant="body1"
                       style={{
                         color: 'white',
-                        fontFamily: 'Druk Wide Web',
-                        fontWeight: 900,
+                        fontWeight: 'bold',
                       }}
                       className={classes.winnerPubkey}
                     >

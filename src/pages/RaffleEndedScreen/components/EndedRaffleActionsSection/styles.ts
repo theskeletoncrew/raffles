@@ -8,7 +8,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   scrollLink: {
     textTransform: 'none',
     marginRight: '-5px',
-    color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: 'transparent',
       textDecoration: 'none',
@@ -25,7 +24,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: '20px',
     width: '80%',
     height: '40px',
-    fontSize: '11px',
+    fontSize: '10px',
     background: '#6435C9',
     fontFamily: 'Druk Wide Web',
     fontWeight: 900,

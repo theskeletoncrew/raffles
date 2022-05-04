@@ -6,8 +6,6 @@ import { DeviceType } from '../../../../providers/ViewportProvider';
 export const useStyles = makeStyles<Theme, { device: DeviceType }>(
   (theme: Theme) => ({
     root: ({ device }) => ({
-      height: device === DeviceType.Phone ? '25vw' : '300px',
-      width: device === DeviceType.Phone ? '100%' : '200px',
       position: 'relative',
       cursor: 'pointer',
       '&:hover': {
@@ -23,8 +21,8 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     }),
     media: ({ device }) => ({
       ...(device === DeviceType.Phone
-        ? { width: '25vw', height: '25vw' }
-        : { height: '200px' }),
+        ? { maxHeight: '25vw' }
+        : { maxHeight: '400px' }),
     }),
     prizeInfo: ({ device }) => ({
       width: '100%',
@@ -58,6 +56,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       marginTop: '10px',
       display: 'flex',
       flexDirection: 'row',
+      justifyContent: 'center',
     },
     winnerRow: {
       display: 'flex',
@@ -73,19 +72,11 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
     cardBadge: ({ device }) => ({
       fontSize: '12px',
       fontWeight: 'bold',
-      width: '70px',
       textAlign: 'center',
-      padding: '2px',
+      padding: '2px 8px',
       position: 'absolute',
-      ...(device === DeviceType.Phone
-        ? {
-            top: '3px',
-            left: '3px',
-          }
-        : {
-            top: '5px',
-            right: '5px',
-          }),
+      top: '5px',
+      right: '0px',
       color: 'white',
       backgroundColor: theme.palette.primary.main,
       borderRadius: '2px',
