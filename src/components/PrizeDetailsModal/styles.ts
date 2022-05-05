@@ -37,10 +37,11 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       justifyContent: 'top',
       marginBottom: '20px',
     }),
-    media: {
-      width: '90%',
+    media: ({ device }) => ({
       borderRadius: '10px',
-    },
+      width: '90%',
+      maxHeight: device === DeviceType.Phone ? '400px' : '25vw',
+    }),
     contentRight: ({ device }) => ({
       width: device === DeviceType.Phone ? '100%' : '50%',
       height: '100%',
