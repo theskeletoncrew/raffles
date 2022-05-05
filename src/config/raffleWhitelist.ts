@@ -3,6 +3,14 @@ import { TESTING } from './misc';
 
 const testWhitelist = new Map<string, RaffleMetaData>([
   [
+    '8W3MC8RRPf5ePVepULHVNBY898e7yhrFTwsKX5GsvyW1',
+    {
+      name: 'Skull Thought',
+      artist: 'Yellow Trash Can',
+      description: "Art by Yellow Trash Can's, JittaOnTheTrack",
+    },
+  ],
+  [
     '9RZGj3imfhtBKh6bVzd8oAfZ8xx5pMkM1YKxXW7Fi8ab',
     {
       name: 'Spirits in the jungle',
@@ -21,6 +29,14 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 ]);
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
+  [
+    '8W3MC8RRPf5ePVepULHVNBY898e7yhrFTwsKX5GsvyW1',
+    {
+      name: 'Skull Thought',
+      artist: 'Yellow Trash Can',
+      description: "Art by Yellow Trash Can's, JittaOnTheTrack",
+    },
+  ],
   [
     '9RZGj3imfhtBKh6bVzd8oAfZ8xx5pMkM1YKxXW7Fi8ab',
     {
