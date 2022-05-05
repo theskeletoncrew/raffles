@@ -10,7 +10,7 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      paddingTop: device === DeviceType.Phone ? '20px' : '50px',
+      paddingTop: device === DeviceType.Phone ? '20px' : '120px',
     }),
   })
 );

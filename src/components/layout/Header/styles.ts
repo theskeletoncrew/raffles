@@ -7,7 +7,6 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
   (theme: Theme) => ({
     root: ({ device }) => ({
       width: '100%',
-      height: device === DeviceType.Phone ? '50px' : '90px',
       fontFamily: 'Druk Wide Web',
       fontWeight: 900,
     }),
