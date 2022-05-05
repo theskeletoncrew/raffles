@@ -11,18 +11,13 @@ const testWhitelist = new Map<string, RaffleMetaData>([
         'The hairs on my arm stood on end as I framed this shot. The Ubud monkey forest in Bali Indonesia has a reputation for being haunted. The cemetery is not part of the tourist experience, but if you know where to look, you will find it…. Or will it find you?',
     },
   ],
-  // [
-  //   'ARAGaY4RWi79g7rQgEYdQWXVvjTLRzJYQWGABXS8WXin',
-  //   {
-  //     name: 'Blah',
-  //   },
-  // ],
-  // [
-  //   '5JgAgpWnd9wNcZKwhJvTEbnmZwCEMLsu1LvbCfXBwFvs',
-  //   { name: 'x100 your $t',
-  //   overviewImageUri: '/resources/tdwos.png',
-  //   },
-  // ],
+  [
+    'ARAGaY4RWi79g7rQgEYdQWXVvjTLRzJYQWGABXS8WXin',
+    {
+      name: 'Blah',
+      artist: '',
+    },
+  ],
 ]);
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
@@ -35,12 +30,6 @@ const prodWhitelist = new Map<string, RaffleMetaData>([
         'The hairs on my arm stood on end as I framed this shot. The Ubud monkey forest in Bali Indonesia has a reputation for being haunted. The cemetery is not part of the tourist experience, but if you know where to look, you will find it…. Or will it find you?',
     },
   ],
-  // [
-  //   'ARAGaY4RWi79g7rQgEYdQWXVvjTLRzJYQWGABXS8WXin',
-  //   {
-  //     name: 'Blah',
-  //   },
-  // ],
 ]);
 
 export const RAFFLES_WHITELIST = TESTING ? testWhitelist : prodWhitelist;
