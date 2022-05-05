@@ -45,7 +45,7 @@ const ExploreRafflesScreen: FC = () => {
     return (
       <>
         <div className={classes.mainContent}>
-          <CircularProgress color="secondary" />
+          <CircularProgress color="primary" />
         </div>
       </>
     );

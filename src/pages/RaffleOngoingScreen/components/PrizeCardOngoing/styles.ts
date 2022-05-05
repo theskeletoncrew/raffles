@@ -39,6 +39,9 @@ export const useStyles = makeStyles<Theme, { device: DeviceType }>(
       justifyContent: device === DeviceType.Phone ? 'left' : 'center',
       textAlign: device === DeviceType.Phone ? 'left' : 'center',
     }),
+    media: ({ device }) => ({
+      maxHeight: device === DeviceType.Phone ? '25vw' : '600px',
+    }),
     prizeName: {
       marginLeft: '5px',
       color: '#6ef600',
