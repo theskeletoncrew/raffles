@@ -30,6 +30,14 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    '7xDXyg3sifaCqXbFBepJ53nDMbpHMAPA85brFhCawqWq',
+    {
+      name: 'Too Many',
+      artist: 'Nashotobi',
+      description: 'Too Many by Nashotobi',
+    },
+  ],
+  [
     '8W3MC8RRPf5ePVepULHVNBY898e7yhrFTwsKX5GsvyW1',
     {
       name: 'Skull Thought',
