@@ -34,7 +34,8 @@ const prodWhitelist = new Map<string, RaffleMetaData>([
     {
       name: 'Too Many',
       artist: 'Nashotobi',
-      description: 'Too Many by Nashotobi',
+      description:
+        'Even one would be too many, and there are hundreds already.',
     },
   ],
   [
