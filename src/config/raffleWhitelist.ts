@@ -30,6 +30,15 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    '8WUX2o16i7U8RUrNn87ZDfRRd6VACwTk5t5PAoiQgQB6',
+    {
+      name: 'SKULLS x Just Ape',
+      artist: 'Ayyo',
+      description:
+        'All heart, all guts, all skull. Just Ape. Winner also receives our final WL to the Just Ape mint!',
+    },
+  ],
+  [
     '7xDXyg3sifaCqXbFBepJ53nDMbpHMAPA85brFhCawqWq',
     {
       name: 'Too Many',
