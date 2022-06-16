@@ -30,6 +30,15 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    'HyHMTMqHEunBmrzUgBVryL1qgp57yyGCmKZyUY1aB3si',
+    {
+      name: 'What was that?',
+      artist: 'Zen0',
+      description:
+        'A unique 1/1 created by Zen0m for Skeleton Crew. Monster Friend finds himself surrounded by strangeness. Things don\'t look quite the same as they usually do... Something hums from around the corner.',
+    },
+  ],
+  [
     '8WUX2o16i7U8RUrNn87ZDfRRd6VACwTk5t5PAoiQgQB6',
     {
       name: 'SKULLS x Just Ape',
