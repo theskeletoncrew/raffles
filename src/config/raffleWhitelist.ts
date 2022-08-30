@@ -30,12 +30,21 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    '5iwbTGaDQiwX8Ny2mLsa8KGWCswnPuiQzsAdpZe3ms4B',
+    {
+      name: 'Spent my Serotonin',
+      artist: 'IIISO GHOSTLORD',
+      description:
+        'This 1/1 is a stand alone NFT not connected to any collection. Created by IIISO GHOSTLORD.',
+    },
+  ],
+  [
     'HyHMTMqHEunBmrzUgBVryL1qgp57yyGCmKZyUY1aB3si',
     {
       name: 'What was that?',
       artist: 'Zen0',
       description:
-        'A unique 1/1 created by Zen0m for Skeleton Crew. Monster Friend finds himself surrounded by strangeness. Things don\'t look quite the same as they usually do... Something hums from around the corner.',
+        "A unique 1/1 created by Zen0m for Skeleton Crew. Monster Friend finds himself surrounded by strangeness. Things don't look quite the same as they usually do... Something hums from around the corner.",
     },
   ],
   [
