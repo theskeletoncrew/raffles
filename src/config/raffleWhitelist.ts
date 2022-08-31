@@ -30,6 +30,15 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    '5WFMyWi6q82p91Pnp2BtFhyRFmNvmw8PgSRQARQEEWXr',
+    {
+      name: 'Spilled Milk (1/3)',
+      artist: 'IKAA',
+      description:
+        'A 1 of 3 edition created by IKAA for SKULLANA ACADEMY. The raffle is for 1 edition of 3, with the other 2 going to SKULLANA ACADEMY patrons.',
+    },
+  ],
+  [
     '5iwbTGaDQiwX8Ny2mLsa8KGWCswnPuiQzsAdpZe3ms4B',
     {
       name: 'Spent my Serotonin (1/3)',
