@@ -32,10 +32,10 @@ const prodWhitelist = new Map<string, RaffleMetaData>([
   [
     '5iwbTGaDQiwX8Ny2mLsa8KGWCswnPuiQzsAdpZe3ms4B',
     {
-      name: 'Spent my Serotonin',
+      name: 'Spent my Serotonin (1/3)',
       artist: 'IIISO GHOSTLORD',
       description:
-        'This 1/1 is a stand alone NFT not connected to any collection. Created by IIISO GHOSTLORD.',
+        'This 1/1 is a stand alone NFT not connected to any collection. Created by IIISO GHOSTLORD. The raffle is for 1 edition of 3, with the other 2 going to SKULLANA ACADEMY patrons.',
     },
   ],
   [
