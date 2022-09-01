@@ -30,6 +30,15 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    'GprsnLZNdtc3rFvvm3mdES2a7ecNJMB9WQF2SVYqyqzw',
+    {
+      name: 'The Bargain (1/1)',
+      artist: 'LOGAN CARROLL',
+      description:
+        '5400 x 7200 // Digital // Skullana Academy. 2022. The raffle is for a 1/1 with 2 other color variants going to SKULLANA ACADEMY patrons.',
+    },
+  ],
+  [
     '5WFMyWi6q82p91Pnp2BtFhyRFmNvmw8PgSRQARQEEWXr',
     {
       name: 'Spilled Milk (1/3)',
