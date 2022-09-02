@@ -30,6 +30,15 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    'HhLE9NjaEvgxCfBDcPbkXupZaSJUTGAaFgdhR2d4qHzE',
+    {
+      name: 'Silent Voice (1/3)',
+      artist: 'WETIKO',
+      description:
+        'A 1/3 limited edition created for SKULLANA ACADEMY CLASS 3. The raffle is for a 1/1 with 2 other color variants going to SKULLANA ACADEMY patrons.',
+    },
+  ],
+  [
     'GprsnLZNdtc3rFvvm3mdES2a7ecNJMB9WQF2SVYqyqzw',
     {
       name: 'The Bargain (1/1)',
