@@ -17,7 +17,7 @@ const RaffleDetails: FC = () => {
 
   useEffect(() => {
     updateCurrentRaffle();
-    const timerId = setInterval(updateCurrentRaffle, 5000);
+    const timerId = setInterval(updateCurrentRaffle, 30000);
     return () => clearInterval(timerId);
   }, [updateCurrentRaffle]);
 
