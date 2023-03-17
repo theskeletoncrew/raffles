@@ -3,6 +3,14 @@ import { TESTING } from './misc';
 
 const testWhitelist = new Map<string, RaffleMetaData>([
   [
+    'BXpx4i6ModHJ3mx9EpFMVpciqGEXR25kCC5z1BEhBEHQ',
+    {
+      name: 'Late Lullaby',
+      artist: 'Laurence Antony',
+      description: "Late Lullaby by Laurence Antony",
+    },
+  ],
+  [
     '8W3MC8RRPf5ePVepULHVNBY898e7yhrFTwsKX5GsvyW1',
     {
       name: 'Skull Thought',
