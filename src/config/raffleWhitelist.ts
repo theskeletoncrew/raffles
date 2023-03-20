@@ -3,6 +3,14 @@ import { TESTING } from './misc';
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    '8NjZCuvvwXQB6fiZ7GY5EBC2fcKZbGsP2Qk6bvxNmueT',
+    {
+      name: 'Last Flame',
+      artist: 'Joyce Liu',
+      description: 'Last Flame by Joyce Liu',
+    },
+  ],
+  [
     'BXpx4i6ModHJ3mx9EpFMVpciqGEXR25kCC5z1BEhBEHQ',
     {
       name: 'Late Lullaby',
