@@ -3,6 +3,14 @@ import { TESTING } from './misc';
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
+    'PSFSRGLFRCh3aqZw87vwZoQFbe5PoEKwjShfEaoCMSg',
+    {
+      name: 'Trail of a Ghost',
+      artist: 'Ben Bauchau',
+      description: 'Trail of a Ghost by Ben Bauchau',
+    },
+  ],
+  [
     '8NjZCuvvwXQB6fiZ7GY5EBC2fcKZbGsP2Qk6bvxNmueT',
     {
       name: 'Last Flame',
